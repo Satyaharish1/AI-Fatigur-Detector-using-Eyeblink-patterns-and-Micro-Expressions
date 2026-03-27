@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.venv/
+__pycache__/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.pyc

@@ -1,0 +1,54 @@
+{
+  "project": "AI Human Cognitive Fatigue Detector",
+  "task_types": [
+    "fatigue label classification",
+    "fatigue score regression",
+    "sequence fatigue forecasting"
+  ],
+  "features": [
+    "blink_rate",
+    "blink_duration",
+    "prolonged_blinks",
+    "eye_aspect_ratio",
+    "gaze_variance",
+    "brow_tension",
+    "micro_expression_instability",
+    "fixation_drift",
+    "yawn_probability"
+  ],
+  "recommended_models": {
+    "classifier_candidates": [
+      "RandomForestClassifier",
+      "ExtraTreesClassifier"
+    ],
+    "regressor_candidates": [
+      "RandomForestRegressor",
+      "ExtraTreesRegressor"
+    ]
+  },
+  "output_files_after_training": [
+    "fatigue_classifier_bundle.joblib",
+    "fatigue_regressor_bundle.joblib",
+    "fatigue_classifier.joblib",
+    "fatigue_regressor.joblib",
+    "training_report.json",
+    "feature_importance.json",
+    "fatigue_sequence_classifier.joblib",
+    "fatigue_sequence_regressor.joblib",
+    "sequence_training_report.json"
+  ],
+  "training_script": "ml/scripts/train_model.py",
+  "prediction_script": "ml/scripts/predict.py",
+  "evaluation_script": "ml/scripts/evaluate_model.py",
+  "sequence_dataset_script": "ml/scripts/build_sequence_dataset.py",
+  "sequence_training_script": "ml/scripts/train_sequence_model.py",
+  "engineered_features": [
+    "blink_load_index",
+    "closure_strain_index",
+    "instability_tension_ratio",
+    "visual_fatigue_index",
+    "blink_yawn_interaction",
+    "focus_loss_index",
+    "eye_closure_pressure"
+  ]
+}
